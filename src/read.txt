@@ -1,0 +1,58 @@
+    /*
+    public static void changePassword() {
+        try {
+            File file = new File("StudentDetails.txt");
+            BufferedReader br = new BufferedReader(new FileReader("StudentDetails.txt"));
+
+            System.out.print("Can you please enter the Student id? (for change the password): ");
+            String id = input.next();
+
+            String line;
+            boolean found = false;
+
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+
+                if (parts[0].equals(id)) {
+
+                    found = true;
+                    System.out.print("can you please enter the older password : ");
+                    String oldPassword = input.next();
+
+
+                    if (parts.length >= 2) {
+
+
+                        if (parts[1].equals(oldPassword)) {
+                            System.out.print("\nCan you please enter a new password here : ");
+                            String newPassword = input.next();
+
+                            // replace in text file
+                            File tempFile = new File("temp.txt");
+                            BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
+
+
+                            parts[1] = newPassword;
+
+                            System.out.println("\n" + "Id: " + id + "  Your New Password: " + parts[1] + "\n");
+
+                        } else {
+                            System.out.println("\nYour older password is wrong (if you want know about your password contact the management !)");
+
+                        }
+
+
+                    }
+                }
+            }
+
+            br.close();
+
+            if (!found) {
+                System.out.println("\nStudent id wrong or Not registered\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+*/
