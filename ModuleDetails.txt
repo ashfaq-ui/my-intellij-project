@@ -4,3 +4,4 @@
 4COSC011C.2,Web Design and Development
 4COSC010C.2,Software Development ii
 4COSC008C.2,Trends in Computer Science
+computing,yes

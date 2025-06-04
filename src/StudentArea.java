@@ -317,10 +317,11 @@ public class StudentArea {
                             if (confirm.equals("yes")) {
                                 bw.write(id + "," + newPassword);
                                 bw.newLine();
+                                System.out.println("\nPassword successfully changed !\n");
                             } else {
                                 bw.write(id + "," + oldPassword);  // keep old mark
                                 bw.newLine();
-                                System.out.println("Update canceled.");
+                                System.out.println("\nUpdate canceled.\n");
                             }
                         } else {
                             System.out.println("\nEntered old password is wrong !! (if you need to know about your password contact the management)\n");

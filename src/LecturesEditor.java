@@ -1,20 +1,23 @@
-import java.util.* ;
-import java.io.* ;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
-public class StudentResults {
+public class LecturesEditor {
     static Scanner input = new Scanner(System.in);
-    static String studentId;
+    static String lectureId;
 
     public static void studentVerification(){
-        System.out.print("Can you please enter your student id for verification here : ");
-        studentId = input.next();
+        System.out.print("Can you please enter your Lecture id for verification here : ");
+        lectureId = input.next();
 
-        idVerification(studentId);
+        idVerification(lectureId);
     }
 
-    public static void idVerification(String studentId){
+    public static void idVerification(String lectureId){
         try {
-            File file = new File("StudentDetails.txt");
+            File file = new File("LectureDetails.txt");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
 
@@ -28,7 +31,7 @@ public class StudentResults {
                     String id = parts[0].trim();
                     String passwordFromRegister = parts[1].trim();
 
-                    if (id.equals(studentId)) {
+                    if (id.equals(lectureId)) {
                         System.out.println("id exits !\n");
                         found = true;
 
@@ -37,7 +40,7 @@ public class StudentResults {
 
                         while (true) {
 
-                            System.out.print("Now enter your student id password : ");
+                            System.out.print("Now enter your Lecture id password : ");
                             password = input.next();
 
                             if (passwordFromRegister.equals(password)) {
@@ -67,8 +70,8 @@ public class StudentResults {
 
     public static void studentVerificationTwo(){
         System.out.print("Enter your student Id again : ");
-        studentId = input.next();
+        lectureId = input.next();
 
-        idVerification(studentId);
+        idVerification(lectureId);
     }
 }

@@ -243,7 +243,8 @@ public class LectureArea {
                 if (line.contains(checkIdsPassword)) {
                     String[] parts = line.split(",");
                     if (parts.length >= 2) {
-                        System.out.println("\n"+ "password for" + checkIdsPassword + "this id is :" + parts[1] + "\n");
+                        System.out.println("\n"+ "password for " + checkIdsPassword + " is : " + parts[1] + "\n");
+                        found = true ;
                     }
                 }
             }
@@ -316,10 +317,11 @@ public class LectureArea {
                             if (confirm.equals("yes")) {
                                 bw.write(id + "," + newPassword);
                                 bw.newLine();
+                                System.out.println("\nPassword successfully changed !\n");
                             } else {
                                 bw.write(id + "," + oldPassword);  // keep old mark
                                 bw.newLine();
-                                System.out.println("Update canceled.");
+                                System.out.println("\nUpdate canceled.\n");
                             }
                         } else {
                             System.out.println("\nEntered old password is wrong !! (if you need to know about your password contact the management)\n");

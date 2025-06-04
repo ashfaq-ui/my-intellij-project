@@ -34,7 +34,8 @@ public class Main {
 
                     case 2:
                         loopNeed = false ;
-                        // call the function here
+                        LecturesEditor lecturesEditor = new LecturesEditor();
+                        lecturesEditor.studentVerification();
                         break;
 
                     case 3:
@@ -85,28 +86,22 @@ public class Main {
 
                     case 2:
                         loopNeed = false ;
-                        ModuleArea module = new ModuleArea();
-                        module.moduleEdit();
-                        break;
-
-                    case 3:
-                        loopNeed = false ;
                         StudentMarks marks = new StudentMarks();
                         marks.marksEditorStudent();
                         // call the function here
                         break;
 
-                    case 4:
+                    case 3:
                         loopNeed = false ;
                         // call the function here
                         break;
 
-                    case 5:
+                    case 4:
                         loopNeed = false ;
                         mainOptions();
                         break;
 
-                    case 6:
+                    case 5:
                         loopNeed = false ;
                         // Exit
                         break;
