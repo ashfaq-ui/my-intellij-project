@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class LecturesEditor {
@@ -44,8 +45,56 @@ public class LecturesEditor {
                             password = input.next();
 
                             if (passwordFromRegister.equals(password)) {
-                                System.out.println("Login successfull !!");
-                                // call here the call or method to show the results
+                                System.out.println("Login successfull !!\n");
+
+                                boolean loopNeed = true ;
+
+                                while(loopNeed) {
+                                    System.out.println("1 - Marks Editor\n" +
+                                            "2 - Student Summary\n" +
+                                            "3 - Go back to main options\n" +
+                                            "4 - Exit");
+
+                                    try{
+                                        System.out.print("\nAnswer here :");
+                                        int optionSelectedManage = input.nextInt();
+                                        System.out.println();
+
+                                        switch (optionSelectedManage) {
+                                            case 1:
+                                                loopNeed = false ;
+                                                StudentMarks marks = new StudentMarks();
+                                                marks.marksEditorStudent();
+                                                break;
+
+                                            case 2:
+                                                loopNeed = false ;
+                                                // call the function here
+                                                break;
+
+                                            case 3:
+                                                loopNeed = false ;
+                                                Main main = new Main();
+                                                main.mainOptions();
+                                                break;
+
+                                            case 4:
+                                                loopNeed = false ;
+                                                // Exit
+                                                break;
+
+                                            default:
+                                                System.out.println("\nOption selected is not correct !\n");
+                                        }
+                                    }
+
+                                    catch (InputMismatchException e){
+                                        System.out.println("\nInvalid input! Please enter a number.\n");
+                                        input.nextLine(); // clear the invalid input
+                                    }
+
+                                }
+
                                 break;
 
                             } else {
