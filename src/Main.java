@@ -67,11 +67,10 @@ public class Main {
 
         while(loopNeed) {
             System.out.println("1 - Id Verification Area\n" +
-                    "2 - Module name and id edit\n" +
-                    "3 - Marks Edit\n" +
-                    "4 - Student Summary\n" +
-                    "5 - Go back to main options\n" +
-                    "6 - Exit");
+                    "2 - Marks Edit\n" +
+                    "3 - Student Summary\n" +
+                    "4 - Go back to main options\n" +
+                    "5 - Exit");
 
             try{
                 System.out.print("\nAnswer here :");
