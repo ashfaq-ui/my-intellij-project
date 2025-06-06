@@ -299,7 +299,7 @@ public class LectureArea {
                     String oldPassword = parts[1].trim();
 
                     if (id.equals(ask_id)) {
-                        // If ID exists, ask for new marks
+                        // If ID exists, ask for new Password
                         System.out.print("Enter old password here: ");
                         ask_oldPassword = input.next();
                         idExists = true;
@@ -309,7 +309,7 @@ public class LectureArea {
                             newPassword = input.next();
 
                             // Confirm
-                            System.out.println("\nCan you confirm this is the new Marks?");
+                            System.out.println("\nCan you confirm this is the new Password?");
                             System.out.println("ID: " + ask_id + ", " + "NEW PASSWORD: " + newPassword);
                             System.out.println("\nEnter 'yes' to confirm or 'no' to cancel.");
                             String confirm = input.next().toLowerCase();

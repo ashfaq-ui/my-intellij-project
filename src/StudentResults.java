@@ -1,5 +1,6 @@
 import java.util.* ;
 import java.io.* ;
+import java.io.*;
 
 public class StudentResults {
     static Scanner input = new Scanner(System.in);
@@ -42,7 +43,7 @@ public class StudentResults {
 
                             if (passwordFromRegister.equals(password)) {
                                 System.out.println("Login successfull !!");
-                                // call here the call or method to show the results
+                                showsTheResults();
                                 break;
 
                             } else {
@@ -71,4 +72,60 @@ public class StudentResults {
 
         idVerification(studentId);
     }
+
+    public static void showsTheResults(){
+        System.out.println("Your Student Id : " + studentId);
+
+        String mathematics = moduleMarks("Mathematics");
+        String sdOne = moduleMarks("Sd-1");
+        String csf = moduleMarks("CSF");
+        String sdTwo = moduleMarks("Sd-2");
+        String tcs = moduleMarks("TCS");
+        String webDev = moduleMarks("WebDev");
+
+        System.out.println("\nSEMESTER -1 RESULTS BELOW\n");
+        System.out.println("mathematics marks is :" + mathematics);
+        System.out.println("SD-1 marks is :" + sdOne);
+        System.out.println("CSF marks is :" + csf);
+
+        System.out.println("\nSEMESTER -2 RESULTS BELOW\n");
+        System.out.println("SD-2 marks is :" + sdTwo);
+        System.out.println("TCS marks is :" + tcs);
+        System.out.println("WEBDEV marks is :" + webDev);
+
+
+
+
+
+    }
+
+    public static String moduleMarks(String moduleName){
+        try {
+            File file = new File(moduleName + ".txt");
+            BufferedReader br = new BufferedReader(new FileReader(moduleName + ".txt"));
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                String id = parts[0] ;
+                String marks = parts[1];
+                if (parts.length >= 2 && id.equals(studentId)) {
+                    return marks;
+                }
+            }
+
+
+
+            br.close();
+            return "Marks Yet to be Marked ! Please wait for a while..." ;
+
+
+        } catch(IOException e){
+            e.printStackTrace();
+            return "Error reading the file.";
+        }
+
+    }
+
 }
