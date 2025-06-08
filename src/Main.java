@@ -1,7 +1,7 @@
-// import java.util.Arraylist ;
-
 import java.util.* ;
-import java.io.* ;
+import javax.swing.*;
+
+
 
 
 public class Main {
@@ -40,7 +40,8 @@ public class Main {
 
                     case 3:
                         loopNeed = false ;
-                        managementArea();
+                        passwordForManagement();
+
                         break;
 
                     case 4:
@@ -114,6 +115,30 @@ public class Main {
                 System.out.println("\nInvalid input! Please enter a number.\n");
                 input.nextLine(); // clear the invalid input
             }
+
+        }
+    }
+
+    public static void passwordForManagement(){
+        JPasswordField passwordField = new JPasswordField();
+
+        // Show a simple dialog with the password field
+        JOptionPane.showMessageDialog(
+                null,
+                passwordField,
+                "Enter the password (for management):",
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        // Get the entered password
+        String password = new String(passwordField.getPassword());
+
+        if(password.equals("778899")){
+            System.out.println("\nSuccessfully login!!\n");
+            managementArea();
+        }else{
+            System.out.println("\npassword incorrect please try again !\n");
+            mainOptions();
 
         }
     }

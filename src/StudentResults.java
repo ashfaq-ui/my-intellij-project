@@ -42,7 +42,7 @@ public class StudentResults {
                             password = input.next();
 
                             if (passwordFromRegister.equals(password)) {
-                                System.out.println("Login successfull !!");
+                                System.out.println("\nLogin successfull !!");
                                 showsTheResults();
                                 break;
 
@@ -74,7 +74,7 @@ public class StudentResults {
     }
 
     public static void showsTheResults(){
-        System.out.println("Your Student Id : " + studentId);
+        System.out.println("\nYour Student Id : " + studentId);
 
         String mathematics = moduleMarks("Mathematics");
         String sdOne = moduleMarks("Sd-1");
