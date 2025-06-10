@@ -69,13 +69,15 @@ public class LecturesEditor {
 
                                             case 2:
                                                 loopNeed = false ;
-                                                // call the function here
+                                                Main main = new Main();
+                                                main.summaryView();
+
                                                 break;
 
                                             case 3:
                                                 loopNeed = false ;
-                                                Main main = new Main();
-                                                main.mainOptions();
+                                                Main main2 = new Main();
+                                                main2.mainOptions();
                                                 break;
 
                                             case 4:
